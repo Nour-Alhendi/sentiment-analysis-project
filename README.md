@@ -24,6 +24,5 @@ python src/predict.py "I absolutely loved it" "That was awful"
 
 # Output format: label  probability  text
 # Example:
-# 1    0.982    I absolutely loved it, Whoa!
+# 1    0.982    I absolutely loved it
 # 0    0.015    That was awful
->>>>>>> dd5b3c28d004d1a571cba8a76c8969866ab1bc75
