@@ -24,6 +24,8 @@ def split_data(
 ) -> tuple[pd.Series, pd.Series, pd.Series, pd.Series]:
     """
     Splits the DataFrame into training and testing sets.
+    For small datasets, stratification may fail, so we catch that case
+    using a try-except block.
     """
     try:
         # Stratified split is preferred
