@@ -4,6 +4,7 @@ from typing import Any
 import numpy as np
 from numpy.typing import NDArray
 from joblib import load
+import pandas as pd  # Added for counting positive labels in the dataset
 
 
 def load_model(model_path: str) -> Any:
@@ -38,6 +39,13 @@ def format_prediction_lines(
         else:
             lines.append(f"{pred}\t{prob:.3f}\t{text}")
     return lines
+
+def count_posisitve_labels(
+       data_path: str
+) -> int: 
+    """Count the number of positive labels in the dataset."""
+    df = pd.read_csv(data_path)
+    return int(df["label"].sum()) # Assuming 'label' column contains binary values (0 and 1)
 
 
 def main(
