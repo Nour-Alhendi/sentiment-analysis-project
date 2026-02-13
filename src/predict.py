@@ -1,5 +1,6 @@
 import argparse
 from typing import Any
+
 import numpy as np
 from numpy.typing import NDArray
 from joblib import load
@@ -47,19 +48,6 @@ def main(
     preds, probs = predict_texts(classifier, input_texts)
     for line in format_prediction_lines(input_texts, preds, probs):
         print(line)
-
-
-def main(model_path: str, input_texts: list[str]) -> None:
-    """
-    Load the trained model and make predictions on input texts.
-    """
-    model = load_model(model_path)
-
-    predictions: NDArray[np.int_] = model.predict(input_texts)
-
-    for text, pred in zip(input_texts, predictions):
-        label = "Positive" if pred == 1 else "Negative"
-        print(f"{label}: {text}")
 
 
 if __name__ == "__main__":
