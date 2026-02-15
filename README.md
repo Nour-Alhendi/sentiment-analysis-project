@@ -26,3 +26,7 @@ python src/predict.py "I absolutely loved it" "That was awful"
 # Example:
 # 1    0.982    I absolutely loved it
 # 0    0.015    That was awful
+
+## Project Overview
+This project implements a simple sentiment analysis pipeline. 
+It includes scripts for training a machine learning model on labeled text data and generating predictions from new input text using a saved model
