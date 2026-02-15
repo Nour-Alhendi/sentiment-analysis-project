@@ -11,7 +11,15 @@ from sklearn.pipeline import Pipeline, make_pipeline
 
 def load_and_validate_data(data_path: str) -> pd.DataFrame:
     """
-    Loads data from a CSV and ensures it has the required columns.
+    Load the CSV file at the given path and perform basic validation.
+
+    Parameters:
+        data_path (str): Path to the CSV file containing training data.
+
+    Returns:
+        pandas.DataFrame: DataFrame with validated training data.
+    
+    This ensures the input data exists, is readable, and has the expected columns.
     """
     df = pd.read_csv(data_path)
     if not {"text", "label"}.issubset(df.columns):
