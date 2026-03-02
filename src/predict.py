@@ -40,7 +40,7 @@ def format_prediction_lines(
     return lines
 
 
-def main(
+#def main(
         model_path: str,
         input_texts: list[str]
 ) -> None:
