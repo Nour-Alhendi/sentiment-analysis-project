@@ -33,6 +33,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run the formatter script
+      - name: Run training script
+        run: python src/train.py
+
+      - name: Run predict script
         run: |
-          python src/formatter.py --input data/raw_sales_data.csv --output data/cleaned_sales_data.csv
+          python src/predict.py --input data/raw_sales_data.csv --output data/cleaned_sales_data.csv
