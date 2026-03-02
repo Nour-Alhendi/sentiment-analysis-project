@@ -16,9 +16,10 @@ on:
       - ".github/workflows/**"
 
 jobs:
-  run-formatter:
+  ci:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -36,6 +37,6 @@ jobs:
       - name: Run training script
         run: python src/train.py
 
-      - name: Run predict script
+      - name: Run predict script (smoke test)
         run: |
-           python src/predict.py --model models/sentiment.joblib "I love this!" "This is terrible."
+          python src/predict.py --model models/sentiment.joblib "I love this!" "This is terrible."
