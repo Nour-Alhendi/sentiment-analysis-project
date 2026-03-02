@@ -38,4 +38,4 @@ jobs:
 
       - name: Run predict script
         run: |
-          python src/predict.py --input data/raw_sales_data.csv --output data/cleaned_sales_data.csv
+           python src/predict.py --model models/sentiment.joblib "I love this!" "This is terrible."
